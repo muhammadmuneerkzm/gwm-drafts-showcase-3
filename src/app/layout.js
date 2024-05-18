@@ -2,11 +2,10 @@
 import { Inter } from 'next/font/google'
 import Navbar from '../components/Nav-bar'
 import "../styles/globals.css"
-import StoreProvider from '../lib/StoreProvider';
+import StoreProvider from '../lib/StoreProvider.jsx';
 import { useAppDispatch, useAppSelector } from '../lib/hooks';
 import { setCart, saveCart, addToCart, removeFromCart, open } from '../lib/features/cart/cartSlice';
 import { getUser } from '../lib/features/user/userSlice'
-import Loader from "../loader/loader"
 const inter = Inter({ subsets: ['latin'] })
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
