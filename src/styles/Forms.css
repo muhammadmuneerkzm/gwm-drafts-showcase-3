@@ -1,0 +1,429 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body{
+    height: 100vh;
+    background: #111;
+    overflow: hidden;
+}
+
+.circle{
+    position: absolute;
+    top: -10vh;
+    width: 20px;
+    aspect-ratio: 1/1;
+    background: #0f0;
+    box-shadow: 0 0 10px #0f0,
+    0 0 20px #0f0,
+    0 0 30px #0f0,
+    0 0 50px #0f0;
+    border-radius: 50%;
+    animation: animate 5s linear backwards;
+}
+
+@keyframes animate {
+    0%{
+        transform: translateY(1vh);
+        opacity: 1;
+    }
+    50%{
+        /* opacity: 0.6; */
+    }
+    100%{
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    
+}
+
+.circle::before{
+    content: '';
+    position: absolute;
+    top: -90vh;
+    left: 25%;
+    width: 50%;
+    height: 90vh;
+    background: linear-gradient(transparent, #0f0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+/* General CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Custom CSS
+.container {
+  width: 100vw;
+  height: 100vh;
+  /* background: url("./images/bg-img.jpg") no-repeat;
+  background-size: cover;
+  background-position: center; 
+  /* background: ; 
+  /* backdrop-filter: blur(20px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .login-box {
+  position: relative;
+  width: 390px;
+  height: 420px;
+  background: linear-gradient(#000 , #111);
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  /* backdrop-filter: blur(100px); 
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box h2 {
+  font-size: 28px;
+  color: #fff;
+  text-align: center;
+}
+
+.login-box .input-box {
+  position: relative;
+  width: 320px;
+  /* margin: 30px 0; 
+  border-bottom: 2px solid #fff;
+}
+
+.input-box input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+  padding: 0 35px 0 5px;
+}
+
+.input-box input::placeholder {
+  color: #f9f9f9;
+}
+
+.input-box .icon {
+  position: absolute;
+  right: 8px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 50px;
+}
+
+.login-box .remember-forget {
+  margin: -15px 0 15px;
+  font-size: 15px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember-forget label input {
+  margin-right: 3px;
+}
+
+.login-box button {
+  width: 100%;
+  height: 40px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #000;
+  transition: all 0.5s;
+}
+
+.login-box button:hover {
+  background: #1f73c9;
+  color: #fff;
+}
+
+.login-box .register-link {
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  margin: 20px 0 10px;
+}
+
+.remember-forget a,
+.register-link a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.remember-forget a:hover,
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design 
+@media (max-width: 460px) {
+  .container .login-box {
+    width: 350px;
+  }
+
+  .login-box .input-box {
+    width: 290px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container .login-box {
+    width: 100%;
+    height: 100vh;
+    border: none;
+  }
+  .login-box .input-box {
+    width: 250px;
+  }
+} */
+
+
+
+
+
+
+
+
+
+
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.LoginParent{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    /* background: #000; */
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.conbox{
+    display: flex;
+    }
+    
+    .box{
+    background: #000;
+    margin: auto;
+    border-radius: 12px;
+    position: relative; 
+    overflow: hidden;
+    }
+
+    .box.Login{
+        width: 350px;
+        height: 380px;
+    }
+
+    .box.Signup{
+        width: 350px;
+        height: 420px;
+    }
+    
+    .box::before,
+    .box::after{
+    content:'';
+    position: absolute;
+    width: 350px;
+    height: 380px;
+    border-radius: 12px;
+    top: -50%; 
+    background: #f2f2f2;
+    left: -50%;
+    transform-origin: bottom right;
+    animation: animateLogin 6s linear infinite;
+    }
+    
+    .box::after{
+    animation-delay: -3s;
+    }
+    
+    @keyframes animateLogin{
+    0%{
+    transform: rotate(0deg);
+    }
+    100%{
+    transform: rotate(360deg);
+    }
+    }
+    
+    form{
+    position: absolute;
+    background: #000;
+    inset: 4px;
+    border-radius: 12px;
+    padding: 40px 13px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 12;
+    }
+
+    form *{
+        color: #fff;
+    }
+    
+    form h2{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    }
+    
+    .box form .inputbox{
+    width: 280px;
+    position: relative;
+    }
+
+    .box.Login form .inputbox{
+    margin-top: 35px;
+    }
+
+    .box.Signup form .inputbox{
+    margin-top: 25px;
+    }
+    
+    form .inputbox input{
+    padding: 20px 10px 10px;
+    position: relative;
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    z-index: 15;
+    color: #000
+    }
+
+    /* Reset the styles for autofill */
+    .inputbox input[type="email"]:-webkit-autofill::first-line {
+        color: #000 !important;
+        background: transparent !important;
+        display: none;
+    }
+    form .s{
+    margin-top: 25px;
+    }
+    
+    form .inputbox span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 0px 10px;
+    
+    }
+    
+    form .inputbox input:focus~span,
+    form .inputbox input.assured~span{
+    transform: translateY(-34px);
+    font-size: 0.75em;
+    }
+    
+    form .inputbox i{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 3px;
+    background: #f2f2f2;
+    border-radius: 6px;
+    }
+    
+    form .inputbox input:focus~i,
+    form .inputbox input.assured~i{
+    height: 44px;
+    }
+    
+    .links{
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    }
+    
+    .links a{
+    text-decoration: none;
+    font-size: 0.75em;
+    color: #f2f2f2;
+    }
+    
+    form .btn{
+    background: #f2f2f2;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 4px;
+    width: 100px;
+    font-size: 0.9em;
+    color: #000;
+    }
+    
+    
+    
+    
+    @media (max-width: 400px){
+      .box{
+        transform: scale(0.8);
+        background: #000;
+        z-index: 999;
+      }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

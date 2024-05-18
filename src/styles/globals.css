@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+:root{
+  --primary-color: #fefefe;
+  --secondary-color: #000000;
+} 
+body{
+  width: 100vw !important;
+  /* overflow: hidden; */
+  color: var(--primary-color);
+  color: #111111;
+}
+
+#mainTitle {
+  font-size: 1em !important;
+  font-weight: bolder !important;
+  font-family: 'Poppins', sans-serif !important;
+  text-align: center !important;
+  background-clip: text !important;
+  background-image: linear-gradient(to right, #B08CFF, #7541A3) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+*{
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.child-box{
+position: absolute;
+/* left: 78px;
+top: 80px;
+min-height: 100vh; */
+/* border: 2px solid #fff; */
+width: calc(100vw - 78px);
+}
+
+.child-box::-webkit-scrollbar{
+  display: none;
+  width: 4px;
+  background: #ff7300;
+}
+body::-webkit-scrollbar{
+  display: none;
+  width: 4px;
+  background: #ff730000;
+}
+
+body::-webkit-scrollbar-thumb{
+  display: none;
+  width: 4px;
+  border-radius: 25px;
+  background: #ff7300;
+}
+
+
+/* On Small Devices */
+@media (max-width: 600px){
+  .child-box{
+    position: absolute;
+    left: 0;
+    top: 80px;
+    bottom: 70px;
+    height: calc(100vh - 150px);
+    /* scroll-behavior: smooth; */
+    overflow-x: hidden;
+    /* min-height: 100vh; */
+    /* border: 2px solid #fff; */
+    width: 100vw;
+  }
+}
+
+/* On Large Devices */
+@media (min-width: 600px){
+  .child-box{
+    position: absolute;
+    left: 78px;
+    top: 80px;
+    /* min-height: 100vh; */
+    /* border: 2px solid #fff; */
+    width: calc(100vw - 78px);
+  }
+}
+

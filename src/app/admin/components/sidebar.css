@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+.dash-body{
+    z-index: 12;
+    width: 100vw !important;
+    height: 100vh !important;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+    background-color: var(--color-background);
+}
+
+
+
+.dashSidebar{
+    height: 100vh !important;
+}
+
+.dashSidebar .toggle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+
+.dashSidebar .toggle .logo{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dashSidebar .toggle .logo img{
+    width: 2rem;
+    height: 2rem;
+}
+
+.dashSidebar .toggle .close{
+    padding-right: 1rem;
+    display: none;
+}
+
+.dashSidebar .dashboardSidebar{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    /* background-color: #000; */
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    height: 90vh;
+    position: relative;
+    top: 1.5rem;
+    width: 210px;
+    transition: all 0.3s ease;
+}
+
+.dashSidebar .dashboardSidebar:hover{
+    box-shadow: none;
+}
+
+.dashSidebar .dashboardSidebar a{
+    display: flex;
+    align-items: center;
+    color: var(--color-info-dark);
+    height: 3.7rem;
+    gap: 1rem;
+    position: relative;
+    margin-left: 2rem;
+    transition: all 0.3s ease;
+}
+
+.dashSidebar .dashboardSidebar a span{
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+}
+
+.dashSidebar .dashboardSidebar a:last-child{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+.dashSidebar .dashboardSidebar a.active{
+    width: 100%;
+    color: var(--color-primary);
+    background-color: var(--color-light);
+    margin-left: 0;
+}
+
+.dashSidebar .dashboardSidebar a:nth-child(1).active{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.dashSidebar .dashboardSidebar a.active .message-count{
+    color: var(--color-white) !important;
+    
+}
+
+.dashSidebar .dashboardSidebar a.active::before{
+    content: '';
+    width: 6px;
+    height: 18px;
+    background-color: var(--color-primary);
+}
+
+.dashSidebar .dashboardSidebar a.active span{
+    color: var(--color-primary);
+    margin-left: calc(1rem - 3px);
+}
+
+.dashSidebar .dashboardSidebar a:hover{
+    color: var(--color-primary);
+}
+
+.dashSidebar .dashboardSidebar a:hover span{
+    margin-left: 0.6rem;
+}
+
+.dashSidebar .dashboardSidebar .message-count{
+    background-color: var(--color-danger);
+    padding: 2px 6px;
+    color: var(--color-white);
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+}
+
+
+.admin-navbar{
+    left: 0;
+    width: 100%;
+    justify-content: right;
+    padding: 15px;
+    position: absolute;
+    display: flex;
+    justify-content: right;
+}
+
+ .nav{
+    width: 50vw;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 2rem;
+}
+
+ .nav button{
+    display: none;
+}
+
+ .dark-mode{
+    background-color: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+}
+
+ .dark-mode span{
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dark-mode span.active{
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: var(--border-radius-1);
+}
+
+ .nav .profile{
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+
+ .nav .profile .profile-photo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+    .dashSidebar .dashboardSidebar {
+        width: 5.6rem;
+    }
+  
+    .dashSidebar .logo h2{
+        display: none;
+    }
+
+    .dashSidebar .dashboardSidebar h3{
+        display: none;
+    }
+
+    .dashSidebar .dashboardSidebar a{
+        width: 5.6rem;
+    }
+
+    .dashSidebar .dashboardSidebar a:last-child{
+        position: relative;
+        margin-top: 1.8rem;
+    }
+
+   
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .container{
+        width: 100vw;
+        /* grid-template-columns: 1fr; */
+        /* padding: 0 var(--padding-1); */
+    }
+
+    .dashSidebar .dashboardSidebar {
+        width: 210px;
+    }
+
+    .dashSidebar .dashboardSidebar a:nth-child(1).active{
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+    
+    .dashSidebar{
+        position: absolute;
+        display: none;
+        left: -20rem;
+        background-color: var(--color-white);
+        width: 15rem;
+        z-index: 3;
+        box-shadow: 1rem 3rem 4rem var(--color-light);
+        height: 100vh;
+        transition: none;
+        display: block;
+    }
+    
+    .open{
+        animation: showMenu 0.5s ease;
+        left: 0rem;
+    }
+
+    .closed{
+        animation: hideMenu 0.5s ease;
+        left: -20rem;
+    }
+
+    @keyframes showMenu {
+       0%{
+        left: -20rem;
+       } 
+    }
+    @keyframes hideMenu {
+       0%{
+        left: 0rem;
+       }
+       100%{
+        left: -20em
+       }
+    }
+
+    .dashSidebar .logo{
+        margin-left: 1rem;
+    }
+
+    .dashSidebar .logo h2{
+        display: inline;
+    }
+
+    .dashSidebar .dashboardSidebar h3{
+        display: inline;
+    }
+
+    .dashSidebar .dashboardSidebar a{
+        width: 100%;
+        height: 3.4rem;
+    }
+
+    .dashSidebar .dashboardSidebar a:last-child{
+        position: absolute;
+        /* bottom: 5rem; */
+    }
+
+    .dashSidebar .toggle .close{
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    main{
+        margin-top: 8rem;
+        padding: 0 1rem;
+    }
+
+    main .new-users .user-list .user{
+        flex-basis: 35%;
+    }
+
+    main .recent-orders{
+        position: relative;
+        margin: 3rem 0 0 0;
+        width: 100%;
+    }
+
+    main .recent-orders table{
+        width: 100%;
+        margin: 0;
+    }
+
+    .right-section{
+        width: 94%;
+        margin: 0 auto 4rem;
+    }
+
+    .nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        align-items: center;
+        background-color: var(--color-white);
+        padding: 0 var(--padding-1);
+        height: 4.6rem;
+        width: 100%;
+        z-index: 2;
+        box-shadow: 0 1rem 1rem var(--color-light);
+        margin: 0;
+    }
+
+     .nav .dark-mode{
+        width: 4.4rem;
+        position: absolute;
+        left: 66%;
+    }
+
+     .profile .info{
+        display: none;
+    }
+
+    .nav button{
+        display: inline-block;
+        background-color: transparent;
+        cursor: pointer;
+        color: var(--color-dark);
+        position: absolute;
+        left: 1rem;
+    }
+
+     .nav button span{
+        font-size: 2rem;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* My styling */
+
+.dashElementBox{
+    width: calc(100vw - 210px);
+    /* left:10px; */
+    position: relative;
+    padding: 0 30px;
+}
+
+@media screen and (max-width: 768px) {
+.dashElementBox{
+    width: 100vw !important;
+    padding: 0 10px;
+}
+}

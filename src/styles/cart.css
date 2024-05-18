@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+   color: white;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins', sans-serif;
+}
+
+.child-box{
+   background: #111111;
+}
+
+.contaier{
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   padding: 30px 75px;  
+   height: calc(100vh - 80px);
+}
+
+.left-section {
+   width: 100%;
+   overflow-y: scroll;
+   height: 70vh;
+}
+
+.child-box {
+   min-height:0vh;
+}
+
+.left-section::-webkit-scrollbar{
+   width: 3px;
+   background: #6d6d6d31;
+   border-radius: 50%;
+}
+
+.left-section::-webkit-scrollbar-thumb{
+   border-radius: 20px;
+   transition: .5s;
+   background: #ffffff;
+   cursor: pointer;
+}
+
+*{
+   margin: 0;
+   padding: 0;
+}
+
+.table-row{
+   display: table;
+   width: 100%;
+   font-family: sans-serif;
+   background: #55555500;
+   padding: 25px 0;
+   color: #706b6b;
+   font-size: 13px;
+}
+
+.bottom-section{
+   width: 100%;
+   height: 12vh;
+   background: #111111;
+   display:flex;
+   align-items: end;
+   justify-content: space-around;
+   vertical-align: middle;
+   flex-direction: column;
+}
+
+.submit-btn{
+   background: #f58b00;
+   padding: 10px 20px;
+   border-radius: 25px;
+   font-size: medium;
+   font-weight: 600;
+}
+
+.subtotal {
+   display: flex;
+   width: 100%;
+   justify-content: space-between;
+}
+
+.subtotal h2{
+   color: #ffffff;
+}
+
+.subtotal p{
+   margin-left: 50px;
+   color: #d12626;
+}
+
+.table-row{
+   border-bottom: 3px solid #fff;
+   margin-right: 5px;
+}
+
+.table-row:last-child{
+   border-bottom: 0px solid #fff;
+   margin-right: 5px;
+}
+.table-head {
+   box-shadow: none;
+   color: #fff;
+   font-weight: 600;
+   padding: 35px 30px;
+   font-size: 18px;
+   border-bottom: 1px solid #fff;
+}
+.table-head .table-cell{
+   border-right: none;
+}
+.table-cell{
+   display: table-cell;
+   width: 20%;
+   text-align: center;
+   padding: 4px 0;
+   vertical-align: middle;
+}
+.first-cell{
+   text-align: left;
+   padding-left: 10px;
+}
+
+.first-cell p {
+   display: flex;
+   align-items: center;
+}
+
+.first-cell p i {
+   display: flex;
+   align-items: center;
+   margin-left: -18px;
+   margin-right: 15px;
+   font-size: 30px;
+   vertical-align: middle;
+   align-items: center;
+   cursor: pointer;
+}
+.bx-x{
+   font-size: 30px;
+   margin-top: 5px;
+   color: rgb(238, 48, 48);
+}
+
+.mob-cart-tags{
+   display: none;
+}
+
+.last-cell{
+   border-right: none;
+}
+a{
+   text-decoration: none;
+   color: #555;
+}
+
+@media (max-width: 750px){
+   .contaier {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 26px 15px;
+      height: calc(100vh - 80px);
+  }
+} 
+
+@media (max-width: 600px) {
+   .mob-cart-tags{
+      display: flex;
+      flex-direction: column;
+   }
+   .firstss{
+      display: none;
+   }
+   .table-row {   
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+  }
+  .com{
+   display: flex;
+   font-size: larger;
+   letter-spacing: 0.8px;
+   line-height: 25px;
+  }
+  .bottom-section{
+   margin-bottom: 60px;
+   align-items: normal;
+   text-align: center;
+  }
+   .Product {
+      font-size: large;
+      font-weight: 700;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+  }
+  .price{
+   display: flex;
+   justify-content: space-between;
+  }
+  .Quantity{
+   display: flex;
+   justify-content: space-between;
+  }
+
+  .Sub-Total{
+   display: flex;
+   justify-content: space-between;
+  }
+  .Sub-Total p:nth-child(2){
+   margin-left:20px;
+  }
+  .first-cell {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+  .img img{
+   display: flex;
+  }
+  .first{
+   display: none;
+  }
+ .table-head{
+   display: none;
+ }
+ .first-cell img{
+   width: 180px;
+ }
+ img, video {
+   max-width: 190%;
+   height: auto;
+}
+.first-cell p {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   text-align: center;
+}
+.firstss p{
+   visibility: hidden;
+}
+img{
+   visibility: visible;
+}
+}

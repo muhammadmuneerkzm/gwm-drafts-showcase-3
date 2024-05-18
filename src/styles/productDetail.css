@@ -1,0 +1,90 @@
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .child-box{
+    background: #111111;
+  }
+
+  .productdetails{
+    color: #fff;
+    padding: 20px 50px;
+    overflow-x: hidden;
+  }
+
+  .detailProduct-btn {
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.toggle-and-cart{
+    flex-direction: column;
+}
+
+.button{
+    display: flex;
+    width: 100%;
+}
+
+.discount{
+  font-size: 17px;
+  vertical-align: bottom;
+  font-weight: 500;
+  color: #ff4d4de0;
+}
+
+
+  .mb-25{
+    margin-bottom: 6rem;
+  }
+  
+  .logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+  }
+  .logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+  }
+  .logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+  }
+  
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    a:nth-of-type(2) .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+  
+  .card {
+    padding: 2em;
+  }
+  
+  .read-the-docs {
+    color: #888;
+  }
+  
+
+  /* responsive */
+
+  @media (max-width: 636px){
+    .w-24 {
+        width: 4rem;
+    }
+    .h-24 {
+        height: 4rem;
+    }
+} 
