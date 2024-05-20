@@ -123,13 +123,45 @@ export default function Navbar() {
   };
   const ref = useRef();
 
+
+  let products = [
+    { brand: "Nibosi", code: "NW4467648", name: "NIBOSI Watch for Men Fashion Business Men Watches Ultra-Thin Waterproof Chronograph Quartz Watches with Stainless Steel Band",  slug: "nibosi-watch-for-men-fashion-business-men-watches-ultra-thin-waterproof-chronograph-quartz-watches-with-stainless-steel-band", price: 2999, image: "/watches/w1.png" },
+    { brand: "Fossil", code: "FM6471572", name: "Fossil Men Leather Grant Sport Analog Blue Dial Watch-Fs5237, Band Color-Blue",  slug: "fossil-men-leather-grant-sport-analog-blue-dial-watch-fs5237-band-color-blue", price: 7497, image: "/watches/w2.png" },
+    { brand: "Armani", code: "AE3319243", name: "Armani Exchange Silicone Analog White Dial Men Watch-Ax4160, White Band",  slug: "armani-exchange-silicone-analog-white-dial-men-watch-ax4160-white-band",  price: 9995, image: "/watches/w3.png" },
+    { brand: "Tommy Hilfiger", code: "TH8888629", name: "Tommy Hilfiger Analog Blue Dial Men's Watch ",  slug: "tommy-hilfiger-analog-blue-dial-men-s-watch", price: 11900, image: "/watches/w4.png" },
+    { brand: "Fastrack", code: "FA9204251", name: "Fastrack Analog Unisex-Adult Watch ",  slug: "fastrack-analog-unisex-adult-watch",  price: 804, image: "/watches/w5.png" },
+    { brand: "Timex", code: "TA7251169", name: "TIMEX Analog Black Dial Men's Watch",  slug: "timex-analog-black-dial-men-s-watch",  price: 2645, image: "/watches/w6.png" },
+    { brand: "Timex", code: "TM1228868", name: "Timex Men Stainless Steel E-Class Surgical Steel Charge Chronograph Analog Black Dial Watch",  slug: "timex-men-stainless-steel-e-class-surgical-steel-charge-chronograph-analog-black-dial-watch",  price: 6897, image: "/watches/w7.png" }
+    ]
+
+
+    function generateWhatsAppLink(cart) {
+      // Start the message with a greeting
+  
+      const getUrlFromSlug =(slug)=>{
+        return "https://gwm-drafts-showcase.vercel.app/product/"+ slug
+      }
+      let message = "Hello, I'd like to buy:\n\n";
+    
+      // Add each product to the message
+      Object.keys(cart).forEach(slug => {
+        let product = cart[slug]
+        message += `${product.name} \n(${products.find(product => product.slug === slug)?.code}, ₹${product.price}, Qty: ${product.qty})\n\n${getUrlFromSlug(product.slug)}\n\n`;
+      });
+    
+      // Encode the message
+      const encodedMessage = encodeURIComponent(message);
+    
+      // Generate the WhatsApp link
+      return `https://wa.me/+918733966617?text=${encodedMessage}`;
+    }
   return (
     <>
       <div className={`sidebar ${side_bar_state}`}>
         <div className="logo-details">
           {/* <div className="style-gradient"></div> */}
-          <i className="bx bxl-c-plus-plus icon"></i>
-          <div className="logo_name">Prokicks</div>
+          <i className="bx bxs-watch icon"></i>
+          <div className="logo_name pt-1">Rehan's</div>
           <i
             onClick={() => {
               SideClickHandler();
@@ -153,13 +185,13 @@ export default function Navbar() {
             <span className="tooltip">Home</span>
           </li>
 
-          <li>
+          {/* <li>
             <Link href="/categories">
               <i className="bx bx-store"></i>
               <span className="links_name">Categories</span>
             </Link>
             <span className="tooltip">Categories</span>
-          </li>
+          </li> */}
 
           {/* <li>
             <Link href="/products">
@@ -171,8 +203,6 @@ export default function Navbar() {
 
           <li>
             <Link href="/products">
-              {/* <i className='bx bxs-shoe'></i> */}
-              {/* <i className="fas fa-box"></i>             */}
               <i className="bx bx-category"></i>
 
               <span className="links_name">Products</span>
@@ -188,13 +218,22 @@ export default function Navbar() {
             <span className="tooltip">Trending</span>
           </li> */}
 
-          <li>
-            <Link href="/myaccount">
-              <i className="bx bx-user"></i>
-              <span className="links_name">My Account</span>
-            </Link>
-            <span className="tooltip">My Account</span>
-          </li>
+<li>
+  <Link href="/contact">
+    <i className="bx bx-phone"></i>
+    <span className="links_name">Contact</span>
+  </Link>
+  <span className="tooltip">Contact</span>
+</li>
+
+
+<li>
+  <Link href="/about">
+  <i class='bx bx-info-circle'></i>
+    <span className="links_name">About</span>
+  </Link>
+  <span className="tooltip">About</span>
+</li>
 
           {/* <li>
             <Link href="/">
@@ -220,13 +259,13 @@ export default function Navbar() {
             <span className="tooltip">Files</span>
           </li> */}
 
-          <li>
+          {/* <li>
             <Link href="/myorders">
               <i class="bx bx-purchase-tag-alt"></i>
               <span className="links_name">My Orders</span>
             </Link>
             <span className="tooltip">My Orders</span>
-          </li>
+          </li> */}
 
           <li>
             <Link href="/cart">
@@ -236,13 +275,13 @@ export default function Navbar() {
             <span className="tooltip">Cart</span>
           </li>
 
-          <li>
+          {/* <li>
             <Link href="/wishlist">
               <i className="bx bx-heart"></i>
               <span className="links_name">Wishlist</span>
             </Link>
             <span className="tooltip">Wishlist</span>
-          </li>
+          </li> */}
 
           {/* <li>
             <Link href="/">
@@ -261,20 +300,17 @@ export default function Navbar() {
           </li> */}
 
           {/* When Logged in */}
-          <li className="profile logged">
+          {/* <li className="profile logged">
             <div className="profile-details">
-              {/* <img src="profile.jpg" alt="profileImg" /> */}
               <div className="name_job">
                 <div className="name">{userName} Hello</div>
                 <div className="job flex">
                   <span className="m-0 flex justify-end">Explore</span>
-                  {/* <i class='m-0 p-0 bx bx-right-arrow-alt'></i> */}
                 </div>
               </div>
             </div>
             <i className="bx bx-log-out" id="log_out"></i>
-            {/* <i className='bx bx-log-in'></i> */}
-          </li>
+          </li> */}
         </ul>
       </div>
 
@@ -295,12 +331,8 @@ export default function Navbar() {
           <b>B</b>rand
         </div> */}
         <div className="search-icon">
-          <i className="bx bx-search cursor-pointer"></i>
-          <i
-            onClick={(e) => {
-              e.preventDefault();
-              toggleCart();
-            }}
+          {/* <i className="bx bx-search cursor-pointer"></i> */}
+          <i onClick={(e) => { e.preventDefault(); toggleCart();  }}
             className="bx bx-cart cursor-pointer"
           ></i>
         </div>
@@ -327,14 +359,21 @@ export default function Navbar() {
             {Object.keys(cart).map((i) => {
               return (
                 <li key={i} className="cart-item">
-                  <i
-                    onClick={toggleCart}
-                    className="bx bx-x absolute right-0 top-0 text-base my-1 text-red-500 cursor-pointer"
-                  ></i>
-
-                  <img src="https://dummyimage.com/420x260" alt="" />
-                  <div className="info">
-                    <h6 className="text-sm">{cart[i].name}</h6>
+                  <i  onClick={() => {
+                            handleRemoveFromCart(
+                              i,
+                              cart[i].qty,
+                              cart[i].price,
+                              cart[i].name,
+                              cart[i].variant,
+                              cart[i].size
+                            );
+                          }} className="bx bx-x absolute right-0 top-0 text-base my-1 text-red-500 cursor-pointer"></i>
+                     <img
+            src={products.find(product => product.slug === i)?.image}
+            alt={cart[i].name}
+          />       <div className="info flex flex-col justify-between">
+                    <h6 className="text-sm pt-1">{cart[i].name}</h6>
                     <div className="content">
                       <span className="qty text-sm">
                         <i
@@ -350,7 +389,6 @@ export default function Navbar() {
                             );
                           }}
                         ></i>
-
                         {cart[i].qty}
                         <i
                           className="bx bxs-plus-square"
@@ -387,7 +425,7 @@ export default function Navbar() {
               <h2 className="text-sm">₹{subtotal}</h2>
             </div>
 
-            <Link href={"/checkout"}>
+            <Link href={"/cart"}>
               <button
                 disabled={Object.keys(cart).length === 0}
                 className=" cart-checkout-btn mx-auto rounded-full text-transparent bg-clip-text bg-gray-700 text-sm font-bold border-0 disabled:opacity-75 disabled:cursor-default focus:outline-none"
@@ -395,16 +433,17 @@ export default function Navbar() {
                 VIEW CART
               </button>
             </Link>
-            <Link href={"/checkout"}>
+            {/* <Link href={}> */}
               <button
+               onClick={() => {window.location = generateWhatsAppLink(cart)}}
                 className={` cart-checkout-btn mx-auto rounded-full text-white bg-gradient-to-r from-primary-400 to-secondary-600 border-0 disabled:opacity-60 focus:outline-none ${
                   Object.keys(cart).length === 0 ? "" : "hover:bg-secondary-600"
                 }`}
                 disabled={Object.keys(cart).length === 0}
               >
-                <i className="bx bxs-shopping-bag m-1 text-white"></i>Checkout
+                <i className="bx bxl-whatsapp pt-1.5 pr-1 text-white"></i>Order Now
               </button>
-            </Link>
+            {/* </Link> */}
           </div>
         </div>
 

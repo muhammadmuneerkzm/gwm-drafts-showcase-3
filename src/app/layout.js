@@ -9,6 +9,7 @@ import { getUser } from '../lib/features/user/userSlice'
 const inter = Inter({ subsets: ['latin'] })
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
+import "../styles/homepage.css"
 
 
 
@@ -42,7 +43,7 @@ export default function RootLayout({ children , params}) {
     </head>
       <body className={inter.className}>
         <Nav/>
-        <div className='child-box'>
+        <div className='child-box bg-[#212121] min-h-screen'>
         {/* <Loader children={children}/> */}
         {children}
         </div>

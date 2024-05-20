@@ -24,7 +24,7 @@ const ProductPage = () => {
 
     return (
         <>
-        {/* <div className='flex flex-col productdetails justify-between lg:flex-row gap-16 lg:items-center'>
+        <div className='flex flex-col productdetails justify-between lg:flex-row gap-16 lg:items-center'>
             <div className='flex flex-col gap-6 lg:w-2/4'>
                 <img src={activeImg} alt="" className='w-full h-full aspect-square object-cover rounded-xl'/>
                 <div className='flex flex-row justify-between h-24'>
@@ -77,43 +77,8 @@ const ProductPage = () => {
                   </div>
                 </div>
             </div>
-        </div> */}
-        <div className="bg-gray-900 text-white min-h-screen">
-      <Head>
-        <title>Watch Product Page</title>
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet" />
-      </Head>
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row">
-          {/* Product Image */}
-          <div className="md:w-1/2 md:order-1 mb-8 md:mb-0">
-            {/* <img src="watch.jpg" alt="Watch" className="w-full rounded-lg shadow-md" /> */}
-        <img src="/watches/w1.png" alt="Watch" className="w-full rounded-lg shadow-md" />
-
-          </div>
-          {/* Product Details */}
-          <div className="md:w-1/2 md:order-2 md:pl-8">
-            <div className="flex items-center justify-between mb-4">
-              <h1 className="text-4xl font-semibold">Elegant Stainless Steel Watch</h1>
-              <button className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600">Add to Cart</button>
-            </div>
-            <p className="text-2xl mb-4">$150</p>
-            <div className="flex items-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
-              </svg>
-              <p className="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis ligula nec nunc mattis lacinia eu nec libero. Nulla facilisi. Vivamus nec ante at felis blandit ultrices.</p>
-            </div>
-            <div className="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
-              </svg>
-              <p className="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis ligula nec nunc mattis lacinia eu nec libero. Nulla facilisi. Vivamus nec ante at felis blandit ultrices.</p>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
+       
         </>
     )
 }

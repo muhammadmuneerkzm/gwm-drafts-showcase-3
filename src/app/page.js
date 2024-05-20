@@ -6,24 +6,30 @@ import Head from "next/head";
 import { useScrollPercentage } from "react-scroll-percentage";
 import { useInView } from "react-intersection-observer"; // Import useInView hook
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Link from "next/link";
 
 export default function Page() {
   const [Scrollref, percentage] = useScrollPercentage({ triggerOnce: true });
   const { ref, inView } = useInView({ triggerOnce: true }); // Initialize useInView hook
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
   useEffect(() => {
     console.log(percentage);
   }, [percentage]);
 
 
   let products = [
-    { brand: "Nibosi", name: "NIBOSI Watch for Men Fashion Business Men Watches Ultra-Thin Waterproof Chronograph Quartz Watches with Stainless Steel Band", price: 2999, image: "/watches/w1.png" },
-    { brand: "Fossil", name: "Fossil Men Leather Grant Sport Analog Blue Dial Watch-Fs5237, Band Color-Blue", price: 7497, image: "/watches/w2.png" },
-    { brand: "Armani", name: "Armani Exchange Silicone Analog White Dial Men Watch-Ax4160, White Band", price: 9995, image: "/watches/w3.png" },
-    { brand: "Tommy Hilfiger", name: "Tommy Hilfiger Analog Blue Dial Men's Watch ", price: 11900, image: "/watches/w4.png" },
-    { brand: "Fastrack", name: "Fastrack Analog Unisex-Adult Watch ", price: 804, image: "/watches/w5.png" },
-    { brand: "Timex", name: "TIMEX Analog Black Dial Men's Watch", price: 2645, image: "/watches/w6.png" },
-    { brand: "Timex", name: "Timex Men Stainless Steel E-Class Surgical Steel Charge Chronograph Analog Black Dial Watch", price: 6897, image: "/watches/w7.png" }
-  ]
+    { brand: "Nibosi", code: "NW4467648", name: "NIBOSI Watch for Men Fashion Business Men Watches Ultra-Thin Waterproof Chronograph Quartz Watches with Stainless Steel Band",  slug: "nibosi-watch-for-men-fashion-business-men-watches-ultra-thin-waterproof-chronograph-quartz-watches-with-stainless-steel-band", price: 2999, image: "/watches/w1.png" },
+    { brand: "Fossil", code: "FM6471572", name: "Fossil Men Leather Grant Sport Analog Blue Dial Watch-Fs5237, Band Color-Blue",  slug: "fossil-men-leather-grant-sport-analog-blue-dial-watch-fs5237-band-color-blue", price: 7497, image: "/watches/w2.png" },
+    { brand: "Armani", code: "AE3319243", name: "Armani Exchange Silicone Analog White Dial Men Watch-Ax4160, White Band",  slug: "armani-exchange-silicone-analog-white-dial-men-watch-ax4160-white-band",  price: 9995, image: "/watches/w3.png" },
+    { brand: "Tommy Hilfiger", code: "TH8888629", name: "Tommy Hilfiger Analog Blue Dial Men's Watch ",  slug: "tommy-hilfiger-analog-blue-dial-men-s-watch", price: 11900, image: "/watches/w4.png" },
+    { brand: "Fastrack", code: "FA9204251", name: "Fastrack Analog Unisex-Adult Watch ",  slug: "fastrack-analog-unisex-adult-watch",  price: 804, image: "/watches/w5.png" },
+    { brand: "Timex", code: "TA7251169", name: "TIMEX Analog Black Dial Men's Watch",  slug: "timex-analog-black-dial-men-s-watch",  price: 2645, image: "/watches/w6.png" },
+    { brand: "Timex", code: "TM1228868", name: "Timex Men Stainless Steel E-Class Surgical Steel Charge Chronograph Analog Black Dial Watch",  slug: "timex-men-stainless-steel-e-class-surgical-steel-charge-chronograph-analog-black-dial-watch",  price: 6897, image: "/watches/w7.png" }
+    ]
 
   const hrRef = useRef(null);
   const mnRef = useRef(null);
@@ -92,6 +98,8 @@ export default function Page() {
       return str
     }
   }
+
+  // if (!isMounted) return null;
   return (
     <>
       <div className="all-hero-wrap">
@@ -163,9 +171,9 @@ export default function Page() {
 
 
         <div className="trending pl-4 md:pl-12 md:pr-4 my-8">
-          <div className="my-6 flex justify-between items-center">
+          <div className="my-6 flex justify-between items-center pr-3">
             <h1 className="text-white text-2xl text-bold ">Trending Products</h1>
-            <span className="text-gray-400 text-sm">View all</span>
+            <span className="text-gray-400 text-sm"><Link href={"/products"}>View all</Link></span>
           </div>
 
 {/* <div className="cards-wrapper-outer">
@@ -197,6 +205,7 @@ export default function Page() {
         {products.map((product) => {
           return (
             <div key={product.id} className="card flex flex-col bg-[#1e1c1c] rounded-md pb-3 min-w-[200px]">
+              <Link href={"/product/"+product.slug}>
               <div className="imageSection py-2">
                 <img src={product.image} alt={product.name} />
               </div>
@@ -209,6 +218,7 @@ export default function Page() {
                   <div className="price text-md font-bold">₹ {product.price}</div>
                 </div>
               </div>
+            </Link>
             </div>
           );
         })}
@@ -360,9 +370,9 @@ export default function Page() {
         <p className="text-gray-300 leading-relaxed mb-8">
           At Rehan's Collection, we believe that a watch is more than just a tool for telling time—it is a reflection of your personal style and a statement of who you are. We invite you to explore our collection and discover the perfect watch that speaks to you.
         </p>
-        <a href="/products" className="btn btn-primary text-white bg-gradient-to-r from-primary-400 to-secondary-600 px-6 py-3 rounded-full">
+        <Link href="/products" className="btn btn-primary text-white bg-gradient-to-r from-primary-400 to-secondary-600 px-6 py-3 rounded-full">
           Shop Now
-        </a>
+        </Link>
       </div>
     </div>
       </div>
