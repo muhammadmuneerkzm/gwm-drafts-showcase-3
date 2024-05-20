@@ -146,7 +146,7 @@ export default function Navbar() {
       // Add each product to the message
       Object.keys(cart).forEach(slug => {
         let product = cart[slug]
-        message += `${product.name} \n(${products.find(product => product.slug === slug)?.code}, ₹${product.price}, Qty: ${product.qty})\n\n${getUrlFromSlug(product.slug)}\n\n`;
+        message += `${product.name} \n(${products.find(product => product.slug === slug)?.code}, ₹${product.price}, Qty: ${product.qty})\n\n${getUrlFromSlug(slug)}\n\n`;
       });
     
       // Encode the message

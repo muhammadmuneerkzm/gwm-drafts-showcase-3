@@ -348,6 +348,7 @@ body {
     height: calc(100vh - (156px + 70px));
     overflow: scroll;
     z-index: 1000 !important;
+    border: 2px ;
 }
 
 .cart-sidebar .cart-item{
