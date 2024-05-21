@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
 import "../styles/homepage.css"
-
+import Expired from "./Expired"
 
 
 
@@ -42,14 +42,14 @@ export default function RootLayout({ children , params}) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
     </head>
       <body className={inter.className}>
-        <Nav/>
+        
+        <Expired/>
+        {/* <Nav/>
         <div className='child-box bg-[#212121] min-h-screen'>
-        {/* <Loader children={children}/> */}
         {children}
-        </div>
-        {/* <Footer/> */}
+        </div> */}
         </body>
-    </html>
+    </html> 
     </StoreProvider>
   )
 }

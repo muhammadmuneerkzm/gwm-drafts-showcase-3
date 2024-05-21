@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function page() {
+  
   return (
     <div>
        {/* <div className="container mx-auto py-12 px-6 text-center">
