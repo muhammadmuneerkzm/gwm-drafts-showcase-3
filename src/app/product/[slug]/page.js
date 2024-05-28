@@ -5,10 +5,12 @@ import InterFace from "./interface"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Head from "next/head";
-
+// import { useRouter } from "next/router";
+import GoBack from"./GoBack"
 
 export default async function Page({ params }) {
     let slug = params.slug;
+    // let router = useRouter()
     // let product = await GetProductData(slug)
     // product = JSON.parse(JSON.stringify(product))
 
@@ -46,9 +48,11 @@ export default async function Page({ params }) {
             <Head>
                 <title>404 Not Found</title>
             </Head>
+            {/* <i class='bx bxs-left-arrow-circle absolute text-lg p-2'  onClick={() => redirect.back()}></i> */}
+            <GoBack/>
                 <div className="w-full h-full bg-black flex items-center justify-center flex-col">
-                    <i className="bx bxs-watch text-3xl text-white pb-4"></i>
-                    <span className="text-3xl">Watch Not Found</span>
+                    <i className="bx bxs-watch text-5xl pb-4 text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600"></i>
+                    <span className="text-2xl md:text-3xl">Watch Not Found</span>
                 </div>
                 </>
                 }
@@ -59,6 +63,7 @@ export default async function Page({ params }) {
 import { GetServerSideProps } from 'next'
 import { NotFoundBoundary } from "next/dist/client/components/not-found-boundary";
 import { NOTFOUND } from "dns";
+import { redirect, useRouter } from "next/navigation";
 
 const GetProductData = async (slug) => {
     mongoose.connect('mongodb://localhost:27017/smoz')

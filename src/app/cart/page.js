@@ -49,7 +49,7 @@ function page() {
     // Add each product to the message
     Object.keys(cart).forEach(slug => {
       let product = cart[slug]
-      message += `${product.name} \n(${products.find(product => product.slug === slug)?.code}, ₹${product.price}, Qty: ${product.qty})\n\n${getUrlFromSlug(product.slug)}\n\n`;
+      message += `${product.name} \n(${products.find(product => product.slug === slug)?.code}, ₹${product.price}, Qty: ${product.qty})\n\n${getUrlFromSlug(slug)}\n\n`;
 
     });
   
@@ -277,6 +277,7 @@ Cart is empty
           return (
             <>
               {/* Sample product row */}
+
               <div className="hidden w-full gap-0 md:grid py-4 items-center" style={{ gridTemplateColumns: '1fr 3fr 1fr 1.5fr 1.5fr' }}>
                 <div className="md:ml-2 md:p-0 lg:p-4 flex items-center md:col-span-1">
                   <div className="lg:w-1/3 md:w-1/6 flex justify-center">
@@ -291,7 +292,9 @@ Cart is empty
                     <img src={products.find((product) => product.slug === key)?.image} alt="Watch" className="mr-2 w-full" />
                   </div>
                 </div>
-                <div className="p-4 md:col-span-1">{truncate(product.name, 45)}</div>
+                <Link href={`/product/${key}`}>
+                <div className="p-4 md:col-span-1 cursor-pointer">{truncate(product.name, 45)}</div>
+                </Link>
                 <div className="p-4 md:col-span-1">{product.price}</div>
                 <div className="p-4 md:col-span-1">
                   <span className="text-sm align-middle">
@@ -325,7 +328,11 @@ Cart is empty
 
                 <div className="flex flex-col flex-grow px-2">
                   <div className="flex justify-between gap-2 pb-4 items-start sm:h-auto h-16">
-                    <span className="text-md">{truncate(product.name)}</span>
+
+                  <Link href={`/product/${key}`}>
+                  <span className="text-md">{truncate(product.name)}</span>
+                  </Link>
+                 
                     <i
                       className="bx bx-x w-6 my-1 content-end text-red-500"
                       onClick={() => {
