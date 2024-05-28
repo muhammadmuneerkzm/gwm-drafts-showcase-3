@@ -153,7 +153,11 @@ export default function Navbar() {
       const encodedMessage = encodeURIComponent(message);
     
       // Generate the WhatsApp link
-      return `https://wa.me/+918733966617?text=${encodedMessage}`;
+      if(encodedMessage){
+        return `https://wa.me/+917025345660?text=${encodedMessage}`;
+      }else{
+        return null;
+      }
     }
   return (
     <>
@@ -161,7 +165,7 @@ export default function Navbar() {
         <div className="logo-details">
           {/* <div className="style-gradient"></div> */}
           <i className="bx bxs-watch icon"></i>
-          <div className="logo_name pt-1">Rehan's</div>
+          <div className="logo_name pt-1">WatchHub</div>
           <i
             onClick={() => {
               SideClickHandler();
@@ -325,7 +329,7 @@ export default function Navbar() {
           ></i>
         </div>
         <div id="mainTitle">
-          Rehan's
+          WatchHub
         </div>
         {/* <div className="Brand-name">
           <b>B</b>rand

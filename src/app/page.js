@@ -116,7 +116,7 @@ export default function Page() {
             <span className="first-text">Welcome to</span>
             <span>
               <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-                Rehan's Collection
+                WatchHub Kerala
               </span>
             </span>
           </div>
@@ -368,7 +368,7 @@ export default function Page() {
       <div className="cta text-center mt-16">
         <h3 className="text-2xl font-bold text-secondary-500 mb-4">Visit Us Today!</h3>
         <p className="text-gray-300 leading-relaxed mb-8">
-          At Rehan's Collection, we believe that a watch is more than just a tool for telling time—it is a reflection of your personal style and a statement of who you are. We invite you to explore our collection and discover the perfect watch that speaks to you.
+          At WatchHubKerala, we believe that a watch is more than just a tool for telling time—it is a reflection of your personal style and a statement of who you are. We invite you to explore our collection and discover the perfect watch that speaks to you.
         </p>
         <Link href="/products" className="btn btn-primary text-white bg-gradient-to-r from-primary-400 to-secondary-600 px-6 py-3 rounded-full">
           Shop Now

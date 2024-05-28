@@ -8,6 +8,7 @@ import {
   removeFromCart,
   open,
 } from "../../lib/features/cart/cartSlice";
+import Link from "next/link";
 
 function page() {
   const dispatch = useAppDispatch();
@@ -56,7 +57,7 @@ function page() {
     const encodedMessage = encodeURIComponent(message);
   
     // Generate the WhatsApp link
-    return `https://wa.me/+918733966617?text=${encodedMessage}`;
+    return `https://wa.me/+917025345660?text=${encodedMessage}`;
   }
 
   const handleAddToCart = (itemCode, qty, price, name, size, variant) => {
@@ -87,82 +88,9 @@ function page() {
 
   return (
     <>
-      {/* <h1 className="md:hidden text-2xl text-center py-5 font-semibold">My cart</h1>
-      <div className=" h-screen flex flex-col">
-        <div className="container mx-auto flex flex-col flex-1 p-2 overflow-y-auto">
-          <div className="hidden text-lg md:grid gap-0" style={{gridTemplateColumns : '1fr 3fr 1fr 1fr 2fr'}}>
-            <div className=""></div>
-            <div className="p-4">Product</div>
-            <div className="p-4">Price</div>
-            <div className="p-4">Quantity</div>
-            <div className="p-4">Sub Total</div>
-          </div>
-<div className="flex justify-center">
-  <div className="h-1 w-[95%] bg-gray-800"></div>
-</div>
-
-          <div className="hidden w-full gap-0 md:grid py-4 items-center" style={{gridTemplateColumns : '1fr 3fr 1fr 1fr 2fr'}}>
-            <div className="p-4 flex items-center md:col-span-1">
-              <div className="w-1/2 flex justify-center">
-              <i className="bx bx-x  text-red-300 text-md mr-2 cursor-pointer"></i>
-              </div>
-              <div className="w-1/2 flex justify-center">
-              <img src="/watches/w6.png" alt="Watch" className="mr-2 w-20" />
-              </div>
-            </div>
-            <div className="p-4 md:col-span-1">{truncate("Armani Exchange Silicone Analog White Dial Men Watch-Ax4160, White Band", 45)}</div>
-            <div className="p-4 md:col-span-1">999</div>
-            <div className="p-4 md:col-span-1">1</div>
-            <div className="p-4 md:col-span-1">999.00</div>
-
-          </div>
-
-          <div className="flex justify-center">
-  <div className="h-0.5 w-[85%] bg-gray-800"></div>
-</div>
-
-          <div className="p-1  flex md:hidden">
-            <div className="w-2/6 sm:w-1/6 py-1">
-              <img src="/watches/w6.png" className="w-full" alt="Watch" />
-            </div>
-
-            <div className="flex flex-col flex-grow px-2 ">
-
-              <div className="flex justify-between gap-2 pb-4 items-start sm:h-auto h-16">
-                <span className="text-md">{truncate("Armani Exchange Silicone Analog White Dial Men Watch-Ax4160, White Band")}</span>
-                <i className="bx bx-x w-6 my-1 content-end text-red-500"></i>
-              </div>
-              <div className="flex flex-col gap-2 text-sm">
-                <div className="flex justify-between ">
-                  <p>Price :</p>
-                  <p>225</p>
-                </div>
-                <div className="flex justify-between">
-                  <p>Quantity :</p>
-                  <p>1</p>
-                </div>
-                <div className="flex justify-between">
-                  <p>Sub Total :</p>
-                  <p><span className="text-xs py-1.5 px-1 align-top">₹</span>255</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="fixed bottom-0 flex md:left-[78px] px-4 w-full md:w-[calc(100vw-78px)] justify-between items-center">
-            <div className="md:mb-4">
-              <h2 className="text-white">GrandTotal</h2>
-              <p className="text-red-500">₹253.45</p>
-            </div>
-            <div>
-              <button className="bg-orange-500 text-white py-2 px-4 rounded-lg md:mb-4 md:mt-4">Proceed to checkout</button>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-
-
+     {/* <div className="absolute z-[1000] top-0 left-0 w-full h-full opacity-50 blur-xl">
+Cart is empty
+     </div>
       <h1 className="md:hidden text-2xl text-center py-5 font-semibold">My cart</h1>
       <div className=" min-h-screen flex flex-col pb-20 md:pb-28">
         <div className="container mx-auto flex flex-col flex-1 p-2 h-fit">
@@ -182,11 +110,19 @@ function page() {
   if(product){
     return(
       <>
-                {/* Sample product row */}
                 <div className="hidden w-full gap-0 md:grid py-4 items-center" style={{gridTemplateColumns : '1fr 3fr 1fr 1.5fr 1.5fr'}}>
               <div className="md:ml-2 md:p-0 lg:p-4 flex items-center md:col-span-1">
                 <div className="lg:w-1/3 md:w-1/6 flex justify-center">
-                <i className="bx bx-x  text-red-500 text-md mr-2 cursor-pointer"></i>
+                <i onClick={() => {
+                              handleRemoveFromCart(
+                                key,
+                                product.qty,
+                                product.price,
+                                product.name,
+                                product.variant,
+                                product.size
+                              );
+                            }} className="bx bx-x  text-red-500 text-md mr-2 cursor-pointer"></i>
                 </div>
                 <div className="lg:w-2/3 md:w-5/6 flex justify-center ">
                 <img src={products.find(product => product.slug === key)?.image} alt="Watch" className="mr-2 w-full" />
@@ -231,7 +167,6 @@ function page() {
     <div className="h-0.5 w-[85%] bg-gray-800"></div>
   </div>
   
-            {/* Mobile cart tags */}
             <div className="p-1  flex md:hidden py-3">
               <div className="w-2/6 sm:w-1/6 py-1">
               <img src={products.find(product => product.slug === key)?.image} alt="Watch" className="mr-2 w-full" />
@@ -242,7 +177,6 @@ function page() {
   
                 <div className="flex justify-between gap-2 pb-4 items-start sm:h-auto h-16">
                   <span className="text-md">{truncate(product.name)}</span>
-                  {/* <span className="text-md">{truncate("Armani Exchange Silicone Analog White Dial Men Watch-Ax4160, White Band", 60)}</span> */}
                   <i className="bx bx-x w-6 my-1 content-end text-red-500"></i>
                 </div>
                 <div className="flex flex-col gap-2 text-sm">
@@ -294,7 +228,6 @@ function page() {
   }
 })}
 
-          {/* Repeat other product rows as needed */}
 
           <div className="fixed bg-[#111] h-20 md:h-28 items-center py-4 bottom-0 flex md:left-[78px] px-4 w-full md:w-[calc(100vw-78px)] justify-between">
             <div className="md:mb-4">
@@ -306,7 +239,153 @@ function page() {
             </div>
           </div>
         </div>
+      </div> */}
+<>
+  {/* Blur effect and empty cart message */}
+  {Object.keys(cart).length === 0 && (
+    <div className="absolute inset-0 flex items-center justify-center z-50 bg-opacity-50 backdrop-blur-sm sm:pb-14">
+      <div className="text-center h-fit">
+      <i className="bx bx-shopping-bag text-6xl text-gray-100 pb-6"></i>
+        <h2 className="text-2xl font-bold mb-4">Your cart is empty</h2>
+        <p className="text-lg">Add some products to your cart!</p>
+        <Link href="/products">
+          <button type="button"  className="my-6 btn btn-primary text-white bg-gradient-to-r from-primary-400 to-secondary-600 px-6 py-2 rounded-full">
+          Shop Now
+          </button>
+        </Link>
       </div>
+    </div>
+  )}
+
+  <h1 className="md:hidden text-2xl text-center py-5 font-semibold">My cart</h1>
+  <div className="flex flex-col pb-20 md:pb-28">
+    <div className="container mx-auto flex flex-col flex-1 p-2 h-fit">
+      <div className="hidden text-lg md:grid gap-0" style={{ gridTemplateColumns: '1fr 3fr 1fr 1.5fr 1.5fr' }}>
+        <div className=""></div>
+        <div className="p-4">Product</div>
+        <div className="p-4">Price</div>
+        <div className="p-4">Quantity</div>
+        <div className="p-4">Sub Total</div>
+      </div>
+      <div className="flex justify-center">
+        <div className="h-0.5 md:h-1 w-[95%] bg-gray-800"></div>
+      </div>
+
+      {Object.keys(cart).map((key) => {
+        let product = cart[key];
+        if (product) {
+          return (
+            <>
+              {/* Sample product row */}
+              <div className="hidden w-full gap-0 md:grid py-4 items-center" style={{ gridTemplateColumns: '1fr 3fr 1fr 1.5fr 1.5fr' }}>
+                <div className="md:ml-2 md:p-0 lg:p-4 flex items-center md:col-span-1">
+                  <div className="lg:w-1/3 md:w-1/6 flex justify-center">
+                    <i
+                      onClick={() => {
+                        handleRemoveFromCart(key, product.qty, product.price, product.name, product.variant, product.size);
+                      }}
+                      className="bx bx-x text-red-500 text-md mr-2 cursor-pointer"
+                    ></i>
+                  </div>
+                  <div className="lg:w-2/3 md:w-5/6 flex justify-center ">
+                    <img src={products.find((product) => product.slug === key)?.image} alt="Watch" className="mr-2 w-full" />
+                  </div>
+                </div>
+                <div className="p-4 md:col-span-1">{truncate(product.name, 45)}</div>
+                <div className="p-4 md:col-span-1">{product.price}</div>
+                <div className="p-4 md:col-span-1">
+                  <span className="text-sm align-middle">
+                    <i
+                      className="bx bxs-minus-square text-base p-1 text-gray-400 align-middle"
+                      onClick={() => {
+                        handleRemoveFromCart(key, 1, product.price, product.name, product.variant, product.size);
+                      }}
+                    ></i>
+                    {product.qty}
+                    <i
+                      className="bx bxs-plus-square text-base p-1 text-gray-400 align-middle"
+                      onClick={() => {
+                        handleAddToCart(key, 1, product.price, product.name, product.variant, product.size);
+                      }}
+                    ></i>
+                  </span>
+                </div>
+                <div className="p-4 md:col-span-1">{product.price * product.qty}</div>
+              </div>
+
+              <div className="flex justify-center">
+                <div className="h-0.5 w-[85%] bg-gray-800"></div>
+              </div>
+
+              {/* Mobile cart tags */}
+              <div className="p-1 flex md:hidden py-3">
+                <div className="w-2/6 sm:w-1/6 py-1">
+                  <img src={products.find((product) => product.slug === key)?.image} alt="Watch" className="mr-2 w-full" />
+                </div>
+
+                <div className="flex flex-col flex-grow px-2">
+                  <div className="flex justify-between gap-2 pb-4 items-start sm:h-auto h-16">
+                    <span className="text-md">{truncate(product.name)}</span>
+                    <i
+                      className="bx bx-x w-6 my-1 content-end text-red-500"
+                      onClick={() => {
+                        handleRemoveFromCart(key, product.qty, product.price, product.name, product.variant, product.size);
+                      }}
+                    ></i>
+                  </div>
+                  <div className="flex flex-col gap-2 text-sm">
+                    <div className="flex justify-between">
+                      <p>Price :</p>
+                      <p>{product.price}</p>
+                    </div>
+                    <div className="flex justify-between">
+                      <p>Quantity :</p>
+                      <span className="text-sm align-middle">
+                        <i
+                          className="bx bxs-minus-square text-base p-1 text-gray-400 align-middle"
+                          onClick={() => {
+                            handleRemoveFromCart(key, 1, product.price, product.name, product.variant, product.size);
+                          }}
+                        ></i>
+                        {product.qty}
+                        <i
+                          className="bx bxs-plus-square text-base pl-1 text-gray-400 align-middle"
+                          onClick={() => {
+                            handleAddToCart(key, 1, product.price, product.name, product.variant, product.size);
+                          }}
+                        ></i>
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <p>Sub Total :</p>
+                      <p>
+                        <span className="text-xs py-1.5 px-0.5 align-top">₹</span>
+                        {product.price * product.qty}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          );
+        }
+      })}
+
+      <div className="fixed bg-[#111] h-20 md:h-28 items-center py-4 bottom-0 flex md:left-[78px] px-4 w-full md:w-[calc(100vw-78px)] justify-between">
+        <div className="md:mb-4">
+          <h2 className="text-white">GrandTotal</h2>
+          <p className="text-green-500">₹{subtotal}</p>
+        </div>
+        <div>
+          <button type="button" className="bg-gradient-to-r from-primary-500 to-secondary-700 text-white py-2 px-4 rounded-lg md:mb-4 md:mt-4" onClick={openLink}>
+            <i className="bx bxl-whatsapp pr-1 text-sm pt-1"></i>Order Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</>
+
 
 
 

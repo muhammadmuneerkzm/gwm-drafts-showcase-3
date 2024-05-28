@@ -43,11 +43,11 @@ export default function RootLayout({ children , params}) {
     </head>
       <body className={inter.className}>
         
-        <Expired/>
-        {/* <Nav/>
+        {/* <Expired/> */}
+        <Nav/>
         <div className='child-box bg-[#212121] min-h-screen'>
         {children}
-        </div> */}
+        </div>
         </body>
     </html> 
     </StoreProvider>

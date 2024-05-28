@@ -8,7 +8,7 @@ export default function page() {
           About Us
         </h1>
         <p className="text-white text-center mb-12">
-        Welcome to Rehan's Collection! We are dedicated to providing the best products and services to our customers. Our journey started with a passion for quality and customer satisfaction, and we strive to deliver excellence in everything we do. We are a watch company from Surat, Gujarat, based in India.
+        Welcome to WatchHubKerala! We are dedicated to providing the best products and services to our customers. Our journey started with a passion for quality and customer satisfaction, and we strive to deliver excellence in everything we do. We are a watch company based in kerala, India.
       </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
