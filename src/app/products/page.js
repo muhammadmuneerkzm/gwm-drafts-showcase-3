@@ -70,7 +70,7 @@ let products = [
       <Link href={`/product/${product.slug}`}>
       <div className="imageSection py-2 aspect-w-1 aspect-h-1">
         {product.image?
-        <Image src={product.image} alt={product.name} className="w-full h-full object-cover rounded-t-md" width={100} height={100} loading="lazy"/>
+        <img src={product.image} alt={product.name} className="w-full h-full object-cover rounded-t-md" width={100} height={100} loading="lazy"/>
         :
         <div className="imageSection py-2 flex items-center justify-center w-full aspect-square rounded-t-md animate-pulse">
         <div className="w-[90%] h-[90%] p-2 bg-gray-700 rounded-lg"></div>

@@ -51,7 +51,7 @@ export default function InterFace(props) {
     const encodedMessage = encodeURIComponent(message);
   
     // Generate the WhatsApp link
-    return `https://wa.me/+918733966617?text=${encodedMessage}`;
+    return `https://wa.me/+917025345660?text=${encodedMessage}`;
   }
 
   let product = props.product
@@ -91,7 +91,7 @@ export default function InterFace(props) {
           {/* </button> */}
   <div className="container px-5 mx-auto">
     <div className="lg:w-4/5 mx-auto flex flex-wrap">
-      <img alt="ecommerce" className="lg:w-1/2 w-full lg:h-fit h-fit object-cover object-center rounded" src={product.image} />
+      <img alt={product.name} className="lg:w-1/2 w-full lg:h-fit h-fit object-cover object-center rounded" src={product.image} />
       <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 md:py-12">
         <div className="flex justify-between">
         <h2 className="text-sm text-gray-500 tracking-widest">{product.brand}</h2>
