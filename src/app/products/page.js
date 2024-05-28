@@ -17,6 +17,8 @@ import AddToCart from "./AddToCart";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { useEffect, useState } from "react";
+import Image from "next/image";
+import Loading from './loading'
 export default async function Page() {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -44,7 +46,7 @@ let products = [
   { brand: "Timex", code: "TM1228868", name: "Timex Men Stainless Steel E-Class Surgical Steel Charge Chronograph Analog Black Dial Watch",  slug: "timex-men-stainless-steel-e-class-surgical-steel-charge-chronograph-analog-black-dial-watch",  price: 6897, image: "/watches/w7.png" }
   ]
 
-  if (!isMounted) return null;
+  if (!isMounted) return <Loading/>;
 
   return (
     <>
@@ -67,7 +69,13 @@ let products = [
     <div key={product.id} className="card flex flex-col bg-[#1e1c1c] rounded-md pb-3">
       <Link href={`/product/${product.slug}`}>
       <div className="imageSection py-2 aspect-w-1 aspect-h-1">
-        <img src={product.image} alt={product.name} className="w-full h-full object-cover rounded-t-md" />
+        {product.image?
+        <Image src={product.image} alt={product.name} className="w-full h-full object-cover rounded-t-md" width={100} height={100} loading="lazy"/>
+        :
+        <div className="imageSection py-2 flex items-center justify-center w-full aspect-square rounded-t-md animate-pulse">
+        <div className="w-[90%] h-[90%] p-2 bg-gray-700 rounded-lg"></div>
+      </div>
+      }
       </div>
       <div className="contentSection text-white">
         <div className="title-brand p-2">
