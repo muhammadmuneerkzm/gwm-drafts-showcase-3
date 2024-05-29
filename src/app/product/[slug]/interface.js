@@ -38,7 +38,7 @@ export default function InterFace(props) {
     // Start the message with a greeting
 
     const getUrlFromSlug =(slug)=>{
-      return "https://gwm-drafts-showcase.vercel.app/product/"+ slug
+      return "https://gwm-drafts-showcase-3.vercel.app/product/"+ slug
     }
     let message = "Hello, I'd like to buy:\n\n";
   
@@ -51,7 +51,7 @@ export default function InterFace(props) {
     const encodedMessage = encodeURIComponent(message);
   
     // Generate the WhatsApp link
-    return `https://wa.me/+917025345660?text=${encodedMessage}`;
+    return `https://wa.me/+918849127330?text=${encodedMessage}`;
   }
 
   let product = props.product

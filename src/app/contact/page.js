@@ -42,21 +42,21 @@ export default function page() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <a
-            href="tel:+917025345660"
+            href="tel:+918849127330"
             className="bg-[#212121] p-6 rounded-xl flex flex-col items-center transition transform cursor-pointer"
           >
             <i className="bx bxs-phone text-primary-500 text-5xl mb-4"></i>
-            <h1 className="text-white text-lg font-semibold mb-2">+91 70253 45660</h1>
+            <h1 className="text-white text-lg font-semibold mb-2">+91 88491 27330</h1>
             <p className="text-gray-400">Call for Orders</p>
           </a>
           <a
-            href="https://www.instagram.com/watchhub_kerala"
+            href="https://www.instagram.com/prokicks.co"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-[#212121] p-6 rounded-xl flex flex-col items-center transition transform  cursor-pointer"
           >
             <i className="bx bxl-instagram text-primary-500 text-5xl mb-4"></i>
-            <h1 className="text-white text-lg font-semibold mb-2">@watchhub_kerala</h1>
+            <h1 className="text-white text-lg font-semibold mb-2">@prokicks.co</h1>
             <p className="text-gray-400">Follow us on Instagram</p>
           </a>
           <a
@@ -64,7 +64,7 @@ export default function page() {
             className="bg-[#212121] p-6 rounded-xl flex flex-col items-center transition transform  cursor-pointer"
           >
             <i className="bx bxs-envelope text-primary-500 text-5xl mb-4"></i>
-            <h1 className="text-white text-lg font-semibold mb-2">watchhub_kerala@gmail.com</h1>
+            <h1 className="text-white text-lg font-semibold mb-2">prokicks.co@gmail.com</h1>
             <p className="text-gray-400">Email us for support</p>
           </a>
         </div>

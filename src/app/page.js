@@ -7,6 +7,7 @@ import { useScrollPercentage } from "react-scroll-percentage";
 import { useInView } from "react-intersection-observer"; // Import useInView hook
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Link from "next/link";
+import products from '../data/products'
 
 export default function Page() {
   const [Scrollref, percentage] = useScrollPercentage({ triggerOnce: true });
@@ -21,15 +22,15 @@ export default function Page() {
   }, [percentage]);
 
 
-  let products = [
-    { brand: "Nibosi", code: "NW4467648", name: "NIBOSI Watch for Men Fashion Business Men Watches Ultra-Thin Waterproof Chronograph Quartz Watches with Stainless Steel Band",  slug: "nibosi-watch-for-men-fashion-business-men-watches-ultra-thin-waterproof-chronograph-quartz-watches-with-stainless-steel-band", price: 2999, image: "/watches/w1.png" },
-    { brand: "Fossil", code: "FM6471572", name: "Fossil Men Leather Grant Sport Analog Blue Dial Watch-Fs5237, Band Color-Blue",  slug: "fossil-men-leather-grant-sport-analog-blue-dial-watch-fs5237-band-color-blue", price: 7497, image: "/watches/w2.png" },
-    { brand: "Armani", code: "AE3319243", name: "Armani Exchange Silicone Analog White Dial Men Watch-Ax4160, White Band",  slug: "armani-exchange-silicone-analog-white-dial-men-watch-ax4160-white-band",  price: 9995, image: "/watches/w3.png" },
-    { brand: "Tommy Hilfiger", code: "TH8888629", name: "Tommy Hilfiger Analog Blue Dial Men's Watch ",  slug: "tommy-hilfiger-analog-blue-dial-men-s-watch", price: 11900, image: "/watches/w4.png" },
-    { brand: "Fastrack", code: "FA9204251", name: "Fastrack Analog Unisex-Adult Watch ",  slug: "fastrack-analog-unisex-adult-watch",  price: 804, image: "/watches/w5.png" },
-    { brand: "Timex", code: "TA7251169", name: "TIMEX Analog Black Dial Men's Watch",  slug: "timex-analog-black-dial-men-s-watch",  price: 2645, image: "/watches/w6.png" },
-    { brand: "Timex", code: "TM1228868", name: "Timex Men Stainless Steel E-Class Surgical Steel Charge Chronograph Analog Black Dial Watch",  slug: "timex-men-stainless-steel-e-class-surgical-steel-charge-chronograph-analog-black-dial-watch",  price: 6897, image: "/watches/w7.png" }
-    ]
+  // let products = [
+  //   { brand: "Nibosi", code: "NW4467648", name: "NIBOSI Watch for Men Fashion Business Men Watches Ultra-Thin Waterproof Chronograph Quartz Watches with Stainless Steel Band",  slug: "nibosi-watch-for-men-fashion-business-men-watches-ultra-thin-waterproof-chronograph-quartz-watches-with-stainless-steel-band", price: 2999, image: "/watches/w1.png" },
+  //   { brand: "Fossil", code: "FM6471572", name: "Fossil Men Leather Grant Sport Analog Blue Dial Watch-Fs5237, Band Color-Blue",  slug: "fossil-men-leather-grant-sport-analog-blue-dial-watch-fs5237-band-color-blue", price: 7497, image: "/watches/w2.png" },
+  //   { brand: "Armani", code: "AE3319243", name: "Armani Exchange Silicone Analog White Dial Men Watch-Ax4160, White Band",  slug: "armani-exchange-silicone-analog-white-dial-men-watch-ax4160-white-band",  price: 9995, image: "/watches/w3.png" },
+  //   { brand: "Tommy Hilfiger", code: "TH8888629", name: "Tommy Hilfiger Analog Blue Dial Men's Watch ",  slug: "tommy-hilfiger-analog-blue-dial-men-s-watch", price: 11900, image: "/watches/w4.png" },
+  //   { brand: "Fastrack", code: "FA9204251", name: "Fastrack Analog Unisex-Adult Watch ",  slug: "fastrack-analog-unisex-adult-watch",  price: 804, image: "/watches/w5.png" },
+  //   { brand: "Timex", code: "TA7251169", name: "TIMEX Analog Black Dial Men's Watch",  slug: "timex-analog-black-dial-men-s-watch",  price: 2645, image: "/watches/w6.png" },
+  //   { brand: "Timex", code: "TM1228868", name: "Timex Men Stainless Steel E-Class Surgical Steel Charge Chronograph Analog Black Dial Watch",  slug: "timex-men-stainless-steel-e-class-surgical-steel-charge-chronograph-analog-black-dial-watch",  price: 6897, image: "/watches/w7.png" }
+  //   ]
 
   const hrRef = useRef(null);
   const mnRef = useRef(null);
@@ -108,7 +109,7 @@ export default function Page() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         {/* <img className='absolute vectorImg' src='/stocks/vector-blue-1.png'></img> */}
-        <div className="heroSection text-white">
+        {/* <div className="heroSection text-white">
           <div className="img line">
             <div className="absolute h-1 rounded-full w-28 bg-gradient-to-r from-primary-300 to-secondary-600"></div>
           </div>
@@ -116,14 +117,51 @@ export default function Page() {
             <span className="first-text">Welcome to</span>
             <span>
               <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-                WatchHub Kerala
+                Prokicks.in
               </span>
             </span>
           </div>
 
           <div className="hero-left-container-wrap">
-            <div className="img shoe">
-              <img src="/stocks/w-2.png" />
+            <div className="img shoe rotate-12 flip">
+              <img src="/stocks/shoe-hero-1.png" />
+            </div>
+
+            <div className="img circle">
+              <div className="w-96 h-96  rounded-full bg-gradient-to-br from-primary-300 to-secondary-700 "></div>
+            </div>
+          </div>
+        </div> */}
+
+<div className="heroSection text-white">
+          <div className="img line">
+            <div className="absolute h-1 rounded-full w-28 bg-gradient-to-r from-primary-300 to-secondary-600"></div>
+          </div>
+
+          <div className="hero-text">
+            <span className="first-text">Make your footsteps with</span>
+            <span>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
+                Prokicks.in
+              </span>
+            </span>
+            <div className="font-semibold">
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
+                SHOES{" "}
+              </span>
+              DON'T MAKE THE MAN,
+              <br />
+              THEY MAKE
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
+                {" "}
+                STATEMENT!{" "}
+              </span>
+            </div>
+          </div>
+
+          <div className="hero-left-container-wrap">
+            <div className="img shoe scale-x-[-1] rotate-[-25deg]">
+              <img src="/stocks/shoe-hero-1.png"/>
             </div>
 
             <div className="img circle">
@@ -331,49 +369,56 @@ export default function Page() {
         </p>
       </div> */}
 
-      <div className="why-choose-us mb-12">
-        <h3 className="text-2xl font-bold text-secondary-500 mb-12">Why Choose Us?</h3>
+<div className="why-choose-us mb-12">
+        <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600 mb-12 text-center">
+          Why Choose Us?
+        </h3>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="flex flex-col items-center">
             <i className="bx bxs-trophy text-4xl text-primary-400 mb-4"></i>
             <h4 className="text-xl font-semibold text-primary-300 mb-2">Expertise</h4>
             <p className="text-gray-300 text-center">
-              Our knowledgeable staff are watch enthusiasts who are passionate about helping you find the perfect timepiece.
+              Our knowledgeable staff are shoe enthusiasts who are passionate about helping you find the perfect pair of shoes.
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <i className="bx bxs-watch text-4xl text-primary-400 mb-4"></i>
+            <i className="bx bxs-badge-check text-4xl text-primary-400 mb-4"></i>
             <h4 className="text-xl font-semibold text-primary-300 mb-2">Quality</h4>
             <p className="text-gray-300 text-center">
-              We offer only the highest quality watches, ensuring that each piece is authentic and crafted to the highest standards.
+              We offer only the highest quality shoes, ensuring that each pair is authentic and crafted to the highest standards.
             </p>
           </div>
           <div className="flex flex-col items-center">
             <i className="bx bxs-conversation text-4xl text-primary-400 mb-4"></i>
             <h4 className="text-xl font-semibold text-primary-300 mb-2">Customer Service</h4>
             <p className="text-gray-300 text-center">
-              We are committed to providing exceptional service, from helping you choose the right watch to offering maintenance and repair services.
+              We are committed to providing exceptional service, from helping you choose the right shoes to offering maintenance and repair services.
             </p>
           </div>
           <div className="flex flex-col items-center">
             <i className="bx bxs-collection text-4xl text-primary-400 mb-4"></i>
             <h4 className="text-xl font-semibold text-primary-300 mb-2">Diverse Selection</h4>
             <p className="text-gray-300 text-center">
-              With a wide range of brands and styles, we have something for everyone, whether you are a seasoned collector or new to the world of watches.
+              With a wide range of brands and styles, we have something for everyone, whether you are a seasoned collector or new to the world of shoes.
             </p>
           </div>
         </div>
       </div>
 
       <div className="cta text-center mt-16">
-        <h3 className="text-2xl font-bold text-secondary-500 mb-4">Visit Us Today!</h3>
+        <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600 mb-4">
+          Visit Us Today!
+        </h3>
         <p className="text-gray-300 leading-relaxed mb-8">
-          At WatchHubKerala, we believe that a watch is more than just a tool for telling time—it is a reflection of your personal style and a statement of who you are. We invite you to explore our collection and discover the perfect watch that speaks to you.
+          At ProKicks, we believe that a pair of shoes is more than just footwear—it is a reflection of your personal style and a statement of who you are. We invite you to explore our collection and discover the perfect shoes that speak to you.
         </p>
         <Link href="/products" className="btn btn-primary text-white bg-gradient-to-r from-primary-400 to-secondary-600 px-6 py-3 rounded-full">
           Shop Now
         </Link>
       </div>
+
+
+      
     </div>
       </div>
     </>

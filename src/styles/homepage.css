@@ -107,14 +107,8 @@
     letter-spacing: 0.1px;
   }
 
-  /* .hero-left-container-wrap{
-    right: -8%;
-    position: relative;
-    top: -32%
-  } */
-
   .circle .rounded-full{
-    box-shadow: 8px 5px 90px 5px #43225D;
+    box-shadow: 8px 5px 90px 5px #EA580C;
   }
 
   .style-gradient{
@@ -212,7 +206,7 @@
 
 
   .counter-top-wrapper{
-    box-shadow: -- #43225D;
+    box-shadow: -- #EA580C;
   }
   .conainer-box h1{
     font-size: var(--p-font);
